@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Using JavaScript</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="drawing-tools">
+        <div class="shapes-container">
+          <p>Shapes</p>
+          <ul class="shapes">
+            <li>
+              <img src="icons/circle.png" alt="" onclick="selectShape(this)" id="circle"/>
+            </li>
+            <li>
+              <img src="icons/rectangle.png" alt="" onclick="selectShape(this)" id="rectangle"/>
+            </li>
+
+            <li>
+              <img src="icons/triangle.png" alt="" onclick="selectShape(this)" id="triangle"/>
+            </li>
+          </ul>
+          <div class="fill-color">
+            <input type="checkbox" id="fill-color"/>
+            <label for="fill-color">Fill Color</label>
+          </div>
+        </div>
+
+        <div class="options">
+          <ul>
+            <li class="brush active" onclick="selectShape(this)" id="brush"><i class="fa-solid fa-paintbrush"></i>Brush</li>
+            <li class="erase" onclick="selectShape(this)" id="erase"><i class="fa-solid fa-eraser"></i>Erase</li>
+          </ul>
+        </div>
+
+        <div class="slider">
+          <input type="range" min="1" max="20" value="3" onchange="changeSize(this.value)"/>
+        </div>
+
+        <div class="colors">
+          <ul>
+            <li class="black selected-color" onclick="changeColor(this, 'black')"></li>
+            <li class="red" onclick="changeColor(this, 'red')"></li>
+            <li class="blue" onclick="changeColor(this, 'blue')"></li>
+            <li class="color-picker"><input type="color" onchange="changeColor(this, this.value)"/></li>
+          </ul>
+        </div>
+
+        <div class="buttons">
+          <button onclick="clearCanvas()">Clear Canvas</button>
+          <button onclick="saveAsImage()" class="save-as-image">Save As Image</button>
+        </div>
+      </div>
+
+      <div class="drawing-board">
+      </div>
+
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
